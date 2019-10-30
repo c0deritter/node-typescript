@@ -1,0 +1,19 @@
+{
+  "name": "name_of_the_package",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "typescript": "^3"
+  }
+}
