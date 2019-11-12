@@ -1,14 +1,17 @@
-# Get started
+# Docker
 
-## Command line
+## Start up
 
-```
-npm install
-npm start
-```
+Run a `docker-compose up` inside the root of the project directory.
 
-## Docker
+## Bash inside Node container
 
-`docker-compose up`
+To access the Node infrastructure from within a Docker container without running the application use `bash-in-a-node-docker-container.sh`.
 
-### Docker container 
+# TypeScript compiler
+
+`target`: `es5`
+`module`: `commonjs`
+`outDir`: `./built`
+`strict`: `true`
+`esModuleInterop`: `true`
