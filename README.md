@@ -10,8 +10,8 @@ To access the Node infrastructure from within a Docker container without running
 
 # TypeScript compiler
 
-`target`: `es5`
-`module`: `commonjs`
-`outDir`: `./built`
-`strict`: `true`
-`esModuleInterop`: `true`
+`target`: `es5`  
+`module`: `commonjs`  
+`outDir`: `./built`  
+`strict`: `true`  
+`esModuleInterop`: `true`  
