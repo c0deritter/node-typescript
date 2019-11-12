@@ -1,3 +1,14 @@
-# toggl-service
+# Get started
 
-Time tracking service on the basis of Toggl.
+## Command line
+
+```
+npm install
+npm start
+```
+
+## Docker
+
+`docker-compose up`
+
+### Docker container 
