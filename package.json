@@ -1,15 +1,8 @@
 {
-  "name": "name_of_the_package",
-  "version": "0.0.0",
-  "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "npm run build && node ./build/server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
+    "start": "node ./app/App.js"
   },
   "dependencies": {
     "typescript": "^3"
