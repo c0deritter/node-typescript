@@ -2,9 +2,15 @@ Hi and welcome to the basic Node with TypeScript project template. Use this temp
 
 # Git
 
-The first thing you want to do is to delete the `.git` directory in the root of your project. It is the repo of this template but not of your own project. So delete it and start a new repo with `git init`. If there is a server you can push your commits to, add it with `git remote add origin <url-here>`. 
+## Clone
 
-# You source files and your main file
+Clone this template with `git@github.com:c0deritter/template-typescript-node.git` or with `https://github.com/c0deritter/template-typescript-node.git`.
+
+## Your own repo
+
+Them´n delete the `.git` directory in the root of your project. It is the repo of this template but not of your own project. So delete it and start a new repo with `git init`. If there is a server you can push your commits to, add it with `git remote add origin <url-here>`.
+
+# Your source files and your main file
 
 Put your JavaScript source files into the directory `src`. Name your main file `App.ts`. If you want to name your main file differently, take a look into the `package.json` and replace accordingly.
 
