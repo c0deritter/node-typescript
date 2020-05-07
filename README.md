@@ -1,3 +1,9 @@
+Hi and welcome to the basic Node with TypeScript project template. Use this template as the starting point for your own Node/TypeScript projects. This README.md gives you everything you need to know to be able to start with the template, even though you do not know the tools.
+
+# Git
+
+The first thing you want to do is to delete the `.git` directory in the root of your project. It is the repo of this template but not of your own project. So delete it and start a new repo with `git init`. If there is a server you can push your commits to, add it with `git remote add origin <url-here>`. 
+
 # You source files and your main file
 
 Put your JavaScript source files into the directory `src`. Name your main file `App.ts`. If you want to name your main file differently, take a look into the `package.json` and replace accordingly.
