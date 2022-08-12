@@ -77,7 +77,7 @@ networks:
 
 If your project is named smart-sensor, call the Docker network smartsensor.
 
-Do the same with the file ``docker-compose.test.yml` while leaving the `_test` suffix as it is.
+Do the same with the file `docker-compose.test.yml` while leaving the `_test` suffix as it is.
 
 ### Initial commit
 
