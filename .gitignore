@@ -1,2 +1,9 @@
+# Node
 node_modules
-/built
+app
+
+# Libraries
+loglevels.json
+
+# Operating system
+.DS_Store

@@ -1,10 +1,28 @@
 {
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node ./app/App.js"
-  },
-  "dependencies": {
-    "typescript": "^3"
-  }
+    "name": "your-project-name",
+    "version": "1.0.0",
+    "description": "A short description of your project",
+    "scripts": {
+        "build": "rm -rf app && tsc",
+        "lintFix": "eslint . --fix --ext .ts",
+        "lint": "eslint . --ext .ts",
+        "start": "node ./app/App.js",
+        "startTs": "ts-node src/App.ts",
+        "test": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' mocha -r ts-node/register \"test/**/*.test.ts\""
+    },
+    "dependencies": {
+        "knight-log": "^1"
+    },
+    "devDependencies": {
+        "@types/chai": "^4",
+        "@types/mocha": "^9",
+        "@types/node": "^16",
+        "@typescript-eslint/eslint-plugin": "^5",
+        "@typescript-eslint/parser": "^5",
+        "chai": "^4",
+        "eslint": "^8",
+        "mocha": "^10",
+        "ts-node": "^8",
+        "typescript": "^3"
+    }
 }

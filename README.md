@@ -1,52 +1,145 @@
-Hi and welcome to the basic Node with TypeScript project template. Use this template as the starting point for your own Node/TypeScript projects. This README.md gives you everything you need to know to be able to start with the template, even though you do not know the tools.
+# Node TypeScript project template
 
-# Git
+This is a basic Node project template with the following features.
 
-## Clone
+- NPM
+- TypeScript
+- Mocha
+- Docker
 
-Clone this template with `git@github.com:c0deritter/template-typescript-node.git` or with `https://github.com/c0deritter/template-typescript-node.git`.
+## Usage
 
-## Your own repo
+## Clone from GitHub
 
-Them´n delete the `.git` directory in the root of your project. It is the repo of this template but not of your own project. So delete it and start a new repo with `git init`. If there is a server you can push your commits to, add it with `git remote add origin <url-here>`.
+Clone this template with into a directory which has your project name, for example `my-project`.
 
-# Your source files and your main file
+```
+git clone `https://github.com/c0deritter/template-typescript-node.git` my-project
+```
 
-Put your JavaScript source files into the directory `src`. Name your main file `App.ts`. If you want to name your main file differently, take a look into the `package.json` and replace accordingly.
+### Take Git ownership
 
-# Start the app
+Now that you cloned this repository from GitHub, its origin still belongs there. You need to delete the `.git` directory to get rid of that inheritance.
 
-## Without Docker
+```
+rm -rf .git
+```
 
-To start without Docker you have to follow these steps:
+The next step is to initialise a new Git repository inside that project directory. 
 
-1. Install Node and npm (Node package manager)
-2. Run `npm install` inside the project's root directory which will install all dependencies
-3. Run `npm run build` inside the project's root directory which will transpile the TypeScript files into the directory `app`
-4. Run `npm start` to start the Node application
+```
+git init
+```
 
-## With Docker
+Now add your own Git repository server URL as the new `origin`.
 
-You can start the app by starting a Docker container in which the app will run. Run a `docker-compose up` inside the root of the project directory. It will install all dependencies, build and run the application on the port `3000`.
+```
+git remote add origin <url-here>`
+```
 
-# Stop the app
+### Take ownership of the content
 
-## Without Docker
+#### README.md
 
-You need to press Ctrl+C on your command line which is running your Node app. This will terminate the Node app.
+Since this `README.md` provides information on how to work with this Node project template, it will not be completely appropriate for your project. Delete the complete `Usage`. The rest of the information will be relevant.
 
-## With Docker
+#### NPM
 
-Run `docker-compose stop`. If you want to delete the Docker container and start with a newly created fresh one, run `docker-compose down`. After both commands you can restart your container with `docker-compose up`.
+Open the `package.json` and adjust `name` and `description`.
 
-# View your the output of your app in a browser
+```json
+{
+    "name": "your-project-name",
+    "version": "1.0.0",
+    "description": "A short description of your project"
+}
+```
 
-As long as your Node app is one that can communicate with a browser and for example sends HTML to it, you can open your browser and visit `localhost:3000` to see the results.
+### Docker
 
-# Bash in a Node Docker container
+Open the `docker-compose.yml` file and adjust the name of the external docker network.
 
-If you are working with docker and you want to be able to directly work with npm for example, you want to have a bash inside a Node docker container to be able to access all the infrastructure like npm. You can do this with Docker easily by running the script `bash-in-a-node-docker-container.sh`. It will start a Node Docker container and a bash inside it. After exiting it the container will also be deleted.
+```yml
+version: '3.8'
+services:
+  app:
+    image: 'node:16'
+    command: bash -c 'npm run startTs'
+    working_dir: '/hostdir'
+    volumes:
+      - './:/hostdir'
+    networks:
+      - myproject # here
+networks:
+  myproject: # here
+    external: true
+```
 
-# Typescript
+If your project is named smart-sensor, call the Docker network smartsensor.
 
-The TypeScript compiler configuration can be found in the file `tsconfig.json`. It will transpile to JavaScript standard ES2015 into the directory `apps`. If you do not like the target folder, change it there.
+Do the same with the file ``docker-compose.test.yml` while leaving the `_test` suffix as it is.
+
+### Initial commit
+
+Now that everything is set up, you can create your first commit. Before doing so, install all dependencies so that the file `package-lock.json` is created and can be part of that first commit.
+
+```
+npm install
+```
+
+Create the commit and push it to your Git repository server.
+
+```
+git add -A
+git commit -m "Initial commit"
+git push origin main
+```
+
+Congratulations. You are now ready to start developing.
+
+## Install
+
+### Install Docker
+
+Depending on the operating system you are using there are different steps to be done. Please refer to the [official Docker documentation](https://docs.docker.com/engine/install/) on how to install Docker.
+
+### Install dependencies
+
+The last step is to install the used dependencies.
+
+```
+npm install
+```
+
+## Run the app
+
+You can start the app by using Docker Compose.
+
+```
+docker compose up
+```
+
+It will block the terminal and prints out the logs. The app is started using [ts-node](https://www.npmjs.com/package/ts-node) which is a TypeScript execution engine. It has the advantage that on error it will display the line numbers of the actual TypeScript source code file instead of the transpiled JavaScript one.
+
+If you want to stop the Docker container, press `Ctrl+C`.
+
+If you want your app to run in the background and still want to see the logs, run the following.
+
+```
+docker compose up -d
+docker compose logs -f
+```
+
+To stop the container execute the following command.
+
+```
+docker compose stop
+```
+
+## Run tests
+
+Run the following command.
+
+```
+npm run test
+```

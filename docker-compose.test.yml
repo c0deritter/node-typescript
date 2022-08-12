@@ -2,12 +2,12 @@ version: '3.8'
 services:
   app:
     image: 'node:16'
-    command: bash -c 'npm run startTs'
+    command: bash -c 'npm run test'
     working_dir: '/hostdir'
     volumes:
       - './:/hostdir'
     networks:
-      - myproject
+      - myproject_test
 networks:
-  myproject:
+  myproject_test:
     external: true
