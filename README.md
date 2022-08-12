@@ -41,7 +41,7 @@ git remote add origin <url-here>`
 
 #### README.md
 
-Since this `README.md` provides information on how to work with this Node project template, it will not be completely appropriate for your project. Delete the complete `Usage`. The rest of the information will be relevant.
+Since this `README.md` provides information on how to work with this Node project template, it will not be completely appropriate for your project. Adjust the title and its description. Delete the complete `Usage`. The rest of the information will be relevant.
 
 #### NPM
 
@@ -55,7 +55,7 @@ Open the `package.json` and adjust `name` and `description`.
 }
 ```
 
-### Docker
+#### Docker
 
 Open the `docker-compose.yml` file and adjust the name of the external docker network.
 
